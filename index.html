@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movielist</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-light ">
+
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="picture/movie.png" alt="movie" id="icon">
+                    The Movie List
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Best 100</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">This mount</a>
+                        </li>
+                    </ul>
+
+
+                    <form class="d-flex">
+                        <button class="btn-secondary">Login</button>
+                    </form>
+
+                </div>
+            </div>
+        </nav>
+
+        <h1>The Movie List</h1>
+
+    </header>
+
+
+    <div id="slider"></div>
+
+
+
+    <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+    </form> -->
+
+    <!-- <div class="carousel">
+        <button class="carousel-btn" onclick="crsLeft()">buraya</button>
+        <ul class="list-group list-group-horizontal carousel-ul">
+            
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item carousel-li">
+                <div class="col-12">
+                    <div class="card">
+                        <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                        <div class="card-body">
+                            <a href="#">
+                                <h5 class="card-title">Movie Name</h5>
+                            </a>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+ 
+
+           
+        </ul>
+         <button class="carousel-btn" onclick="crsRight()">buraya</button>
+
+    </div> -->
+
+
+
+    <div class="container">
+
+        <div class="card-group row-cols-4 g-4">
+
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+
+
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-group row-cols-4 g-4">
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-group row-cols-4 g-4">
+
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+
+
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="card">
+                    <a href="#"> <img src="picture/pic.jpg" class="card-img-top poster" alt="..."> </a>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title">Movie Name</h5>
+                        </a>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- <footer class="card-footer ">
+
+        <ul class="list-group list-group-horizontal align-items-center">
+
+            <li class="list-group-item"><a class="social_link" href="#"><img class="social_media"
+                        src="picture/twitter.png" alt="icon_tw"> </a></li>
+            <li class="list-group-item"><a class="social_link" href="#"><img class="social_media"
+                        src="picture/instagram.png" alt="icon_ins"></a></li>
+            <li class="list-group-item"><a class="social_link" href="#"><img class="social_media"
+                        src="picture/facebook.png" alt="icon_ytb"> </a></li>
+        </ul>
+    </footer> -->
+
+
+
+    <script src="app.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
