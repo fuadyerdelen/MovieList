@@ -46,6 +46,7 @@ function fillMovies() {
 
         let card = document.createElement('div');
         card.classList.add('card');
+        card.style.height = '420px';
 
         let slider_img_a = document.createElement('a');
         slider_img_a.setAttribute('href', movie.getLink());

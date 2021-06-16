@@ -98,4 +98,29 @@ a {
 }
 
 
+.carousel-control-next {
+    
+    width: 100px;
+    justify-content: flex-start;
+}
+
+
+
+.carousel-control-prev {
+    width: 100px;
+    justify-content: flex-end;
+}
+.carousel-control-prev-icon{
+    background-image: url(/picture/arrow.png);
+    transform: rotateY(180deg);
+}
+.carousel-control-next-icon{
+background-image: url(/picture/arrow.png);
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    width: 6rem;
+    height: 6rem;
+}
+
 
