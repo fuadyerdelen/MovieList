@@ -17,7 +17,6 @@ a {
 
 
 
-
 .btn-outline-success {
     color: #212529;
     border-color: #212529;
@@ -34,34 +33,12 @@ a {
 
 
 
-.carousel-ul{
-        display: flex;
-        flex-wrap: nowrap;
-        overflow: hidden !important;
-        box-sizing: border-box;
-        width: 90%;
-        border: black solid 2px;
-        float:left;
-   }
-.carousel-li:hover {
-        transform: scale(1.04);
-        transition-duration: 0.2s;
-   }
-.carousel-li{
-       padding: 1px !important;
-   }
-.carousel-btn{
-       float: left;
-       display:inline;
-       height:120px;
-       clear: right;
-   }
 
 
 
 #slider{
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
     padding-top: 30px;
     height: 500px;
 }
@@ -71,11 +48,9 @@ a {
 }
 .card{
     border-radius: 10% 0 10% 0;
-    margin-right: 4%;
-    margin-bottom: 6%;
     min-width: 200px;
     max-width: 200px;
-    margin: 0 30px 0 0;
+    margin: 3px;
 }
 .card:hover{
     transform: scale(1.04);
@@ -95,7 +70,13 @@ a {
 }
 .list-group-item{
     padding: 0;
+     border-radius: 10% 0 0 0;
 }
+#movieList{
+    transition:transform .5s;
+}
+
+
 
 
 .carousel-control-next {
@@ -103,16 +84,13 @@ a {
     width: 100px;
     justify-content: flex-start;
 }
-
-
-
 .carousel-control-prev {
     width: 100px;
     justify-content: flex-end;
 }
 .carousel-control-prev-icon{
     background-image: url(/picture/arrow.png);
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) ;
 }
 .carousel-control-next-icon{
 background-image: url(/picture/arrow.png);
@@ -124,3 +102,10 @@ background-image: url(/picture/arrow.png);
 }
 
 
+
+
+
+.cont-card:hover{
+    transform: translateX(-45px);
+    transform: translateZ(20);
+}

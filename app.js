@@ -1,23 +1,29 @@
-// function crsLeft() {
-//     // transform: translateX(-190 px);
+let positionX = 0;
+let timer = setInterval(_crsRight, 2000);
 
-//     document.querySelectorAll('.carousel-li').forEach(function (element) {
+function crsLeft() {
+    if (positionX < 0) positionX += 206;
+    document.getElementById('movieList').style.transform = 'translateX(' + positionX + 'px)';
+    clearInterval(timer);
+}
 
-//         element.style.transform = 'translateX(-120px)';
-//     });
-// }
+function crsRight() {
+    clearInterval(timer);
+    _crsRight();
+}
 
-// function crsRight() {
-
-//     document.querySelectorAll('.carousel-li').forEach(function (element) {
-
-//         element.style.transform = 'translateX(120px)';
-//         element.style.transitionDuration = '2s';
-//     });
-// }
+function _crsRight() {
+    let maxSlide = -(20 * 206 - window.innerWidth);
+    if (positionX > maxSlide) positionX -= 206;
+    else positionX = 0;
+    document.getElementById('movieList').style.transform = 'translateX(' + positionX + 'px)';
+}
 
 let movies = [];
-let slider = document.getElementById('slider');
+let movieList = document.getElementById('movieList');
+
+
+
 
 async function fetchMovies() {
     return fetch('https://api.themoviedb.org/3/movie/popular?api_key=218017c9311f39308d2dd5101ce25b23&language=tr-TR&page=1')
@@ -44,9 +50,13 @@ async function fetchMovies() {
 function fillMovies() {
     movies.forEach(movie => {
 
+        let listItem = document.createElement('li');
+        listItem.classList.add('list-group-item', 'border-0');
+
         let card = document.createElement('div');
-        card.classList.add('card');
+        card.classList.add('card', 'slider-card');
         card.style.height = '420px';
+        card.style.width = '200px';
 
         let slider_img_a = document.createElement('a');
         slider_img_a.setAttribute('href', movie.getLink());
@@ -79,7 +89,8 @@ function fillMovies() {
 
 
 
-        slider.appendChild(card);
+        movieList.appendChild(listItem);
+        listItem.appendChild(card);
         card.appendChild(slider_img_a);
         slider_img_a.appendChild(slider_img);
         card.appendChild(card_body);
