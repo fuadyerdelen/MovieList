@@ -25,6 +25,7 @@ let movieList = document.getElementById('movieList');
 
 
 
+
 async function fetchMovies() {
     return fetch('https://api.themoviedb.org/3/movie/popular?api_key=218017c9311f39308d2dd5101ce25b23&language=tr-TR&page=1')
         .then(res => res.json()).then(data => {
@@ -104,3 +105,19 @@ function fillMovies() {
 }
 
 fetchMovies().then(() => fillMovies());
+
+
+//Navbar collapse
+
+
+
+
+
+
+
+
+//login
+
+
+
+

@@ -12,7 +12,9 @@ body {
 a {
     text-decoration: none;
 }
-
+ul{
+    list-style-type:none;
+}
 
 
 
@@ -30,7 +32,23 @@ a {
 .nav-link{
     color: #212529 !important;
 }
+.netlify-identity-menu{
+    display: block;
+}
+.netlify-identity-item{
+    display: inline-block;
+    width: auto;
+    border: #212529 2px solid;
+    margin: 10px 3px 2px 3px;
+}
+.netlify-identity-login,
+.netlify-identity-signup {
+    text-align: center;
+    display: block;
+    color: black;
+    width: 130px;
 
+}
 
 
 
@@ -38,39 +56,58 @@ a {
 
 #slider{
     display: flex;
+    position: relative;
     overflow-x: hidden;
     padding-top: 30px;
     height: 500px;
 }
-.container{
-    clear: both;
-    padding: 100px !important;
-}
-.card{
+.slider-card{
     border-radius: 10% 0 10% 0;
     min-width: 200px;
     max-width: 200px;
     margin: 3px;
 }
-.card:hover{
+.slider-card:hover{
     transform: scale(1.04);
     transition-duration: 0.4s;
 }
-.card-body{
 
-    padding: 8px;
+
+
+
+
+
+.container {
+    clear: both;
+    padding: 100px !important;
 }
-
+.row {
+    margin-bottom: 20px;
+}
+.cont-card{
+    border-radius: 10% 0 10% 0;
+    min-width: 200px;
+    margin: 3px;
+}
+.cont-list{
+    border-radius: 10% 0 10% 0;
+}
+.card{
+    border-radius: 10% 0 10% 0 ;
+}
+.card-body{
+    padding: 8px;
+    border-radius: 10% 0 10% 0;
+}  
 .card-group {
     justify-content: center;
 }
 .poster{
     border-radius: 10% 0 0 0;
-    width: 200px;
+    width: 100%;
 }
 .list-group-item{
     padding: 0;
-     border-radius: 10% 0 0 0;
 }
 #movieList{
     transition:transform .5s;
@@ -80,13 +117,20 @@ a {
 
 
 .carousel-control-next {
-    
+    position:  absolute;
     width: 100px;
-    justify-content: flex-start;
+    height: 200px;
+    top: calc(50% - 100px);
+    justify-content: center;
+    
 }
 .carousel-control-prev {
+    position:absolute;
     width: 100px;
-    justify-content: flex-end;
+    height: 200px;
+    top: calc(50% - 100px);
+    justify-content: center;
+    
 }
 .carousel-control-prev-icon{
     background-image: url(/picture/arrow.png);
@@ -101,11 +145,12 @@ background-image: url(/picture/arrow.png);
     height: 6rem;
 }
 
+@media (max-width: 767.98px) {
+
+   
 
 
-
-
-.cont-card:hover{
-    transform: translateX(-45px);
-    transform: translateZ(20);
+    .card:hover{
+        transform: scale(1);
+    }
 }
