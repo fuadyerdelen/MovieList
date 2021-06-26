@@ -117,7 +117,3 @@ fetchMovies().then(() => fillMovies());
 
 
 //login
-
-
-
-
