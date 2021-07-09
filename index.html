@@ -75,15 +75,21 @@
 
 
 
+    <main>
+
+        <div id="main-content" class="container">
+            <div id="cont_1" class="movie-cards-group"></div>
+        </div>
 
 
-    <div id="main-content" class="container">
+        <div class="d-flex">
 
-        <div id="cont_1" class="movie-cards-group"></div>
+            <button type="button" class="btn btn-info" onclick="nextContent()">Next</button>
+            <button type="button" class="btn btn-info" onclick="previousContent()">Previous</button>
 
-    </div>
+        </div>
 
-
+    </main>
 
 
 
@@ -111,26 +117,23 @@
                 <div class="modal-header">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
                 <div class="modal-body">
                     <div class="container-fluid">
 
                         <div class="row ">
-
-                            <div class="col-sm-4">
+                            <div class="col-md-4">
                                 <img id="movie_details_poster" class="poster" src="/picture/pic.jpg" alt="movie poster">
                             </div>
-
                             <div class="col-md-8">
 
                                 <h5 class="modal-title" id="movie_details_name">Movie Name</h5><br>
-                                 
-                                     <img id="movie_detail_star" src="/picture/star.png" alt="movie rate star">
-                                     <span id="movie_details_rate">8.3</span>
-                                     
-                                 <span id="movie_detail_year">29.04.1994</span><br><br>
-                                 <span id="movie_detail_slogan">Lorem ipsum dolor sit amet consectetur adipisicing
-                                     elit.</span>
+
+                                <img id="movie_detail_star" src="/picture/star.png" alt="movie rate star">
+                                <span id="movie_details_rate">8.3</span>
+
+                                <span id="movie_detail_year">29.04.1994</span><br><br>
+                                <span id="movie_detail_slogan">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit.</span>
                                 <hr>
                                 <p id="movie_detail_summary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                     Praesentium nostrum maxime
@@ -140,7 +143,7 @@
 
                             </div>
 
-                        </div>  
+                        </div>
 
                     </div>
                 </div>

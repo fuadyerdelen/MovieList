@@ -115,17 +115,43 @@ function fillMovies() {
 
 // Movie details
 
+
 function showMovieDetails(link) {
+
     let modal = new bootstrap.Modal(document.getElementById('movie_detail_modal'), {});
-    return fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=218017c9311f39308d2dd5101ce25b23&language=en-US&page=' + page)
+
+    return fetch(link)
         .then(res => res.json()).then(data => {
+
+            console.log(data);
+
+            let detailPoster = document.getElementById('movie_details_poster');
+            let detailOverview = document.getElementById('movie_detail_summary');
+            let detailName = document.getElementById('movie_details_name');
+            let detailRate = document.getElementById('movie_details_rate');
+            let detailSlogan = document.getElementById('movie_detail_slogan');
+            let detailDate = document.getElementById('movie_detail_year');
+
+            let getPoster = () => {
+                return 'https://image.tmdb.org/t/p/w185' + data.poster_path;
+            };
+
+            detailPoster.setAttribute('src', getPoster());
+            detailOverview.innerHTML = data.overview;
+            detailName.innerHTML = data.title;
+            detailSlogan.innerHTML = data.tagline;
+            detailRate.innerHTML = data.vote_average;
+            detailDate.innerHTML = data.release_date;
 
 
             modal.show();
         });
 }
 
+
+
 fetchMovies().then(() => fillMovies());
+
 
 
 
@@ -155,6 +181,7 @@ function previousContent() {
 function fillContent(url) {
 
     let main_content = document.getElementById('main-content');
+    
     main_content.innerHTML = '';
     let movieCardGroup = document.createElement('div');
     movieCardGroup.classList.add('movie-cards-group');
@@ -171,10 +198,11 @@ function fillContent(url) {
         results.forEach(film => {
 
             let link = 'https://api.themoviedb.org/3/movie/' + film.id + '?api_key=218017c9311f39308d2dd5101ce25b23&language=tr-TR';
+
             let getPoster = () => {
                 return 'https://image.tmdb.org/t/p/w185' + film.poster_path;
             };
-            
+
 
 
             let cont_card = document.createElement('div');
@@ -212,7 +240,7 @@ function fillContent(url) {
             let cont_rate = document.createElement('li');
             cont_rate.classList.add('list-group-item');
             cont_rate.innerHTML = film.vote_average;
-            
+
             let rate_star = document.createElement("img");
             rate_star.setAttribute('src', 'picture/star.png');
             rate_star.setAttribute('alt', 'movie star');
