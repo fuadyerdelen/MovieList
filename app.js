@@ -23,7 +23,7 @@ let movies = [];
 let movieList = document.getElementById('movieList');
 
 
-
+console.log(movies);
 
 async function fetchMovies() {
     return fetch('https://api.themoviedb.org/3/movie/popular?api_key=218017c9311f39308d2dd5101ce25b23&language=tr-TR&page=1')
@@ -112,17 +112,22 @@ function fillMovies() {
     });
 }
 
+
+// Movie details
+
 function showMovieDetails(link) {
     let modal = new bootstrap.Modal(document.getElementById('movie_detail_modal'), {});
     return fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=218017c9311f39308d2dd5101ce25b23&language=en-US&page=' + page)
         .then(res => res.json()).then(data => {
-            //...
+
 
             modal.show();
         });
 }
 
 fetchMovies().then(() => fillMovies());
+
+
 
 
 // Next manin Content
@@ -133,6 +138,7 @@ async function fetchTopRatedMovies() {
     return fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=218017c9311f39308d2dd5101ce25b23&language=en-US&page=' + page)
         .then(res => res.json()).then(data => data.results);
 }
+
 
 fillContent();
 
@@ -154,13 +160,22 @@ function fillContent(url) {
     movieCardGroup.classList.add('movie-cards-group');
     main_content.appendChild(movieCardGroup);
 
+
+
+
     const data = fetchTopRatedMovies();
 
     data.then(results => {
 
-        console.log(results);
+
         results.forEach(film => {
+
             let link = 'https://api.themoviedb.org/3/movie/' + film.id + '?api_key=218017c9311f39308d2dd5101ce25b23&language=tr-TR';
+            let getPoster = () => {
+                return 'https://image.tmdb.org/t/p/w185' + film.poster_path;
+            };
+            
+
 
             let cont_card = document.createElement('div');
             cont_card.classList.add('card', 'cont-card');
@@ -168,11 +183,13 @@ function fillContent(url) {
 
             let cont_image_a = document.createElement('a');
             cont_image_a.addEventListener('click', () => showMovieDetails(link));
-            cont_image_a.style.co
+
 
             let cont_image = document.createElement('img');
             cont_image.classList.add('card-img-top', 'cont-poster', 'poster');
+            cont_image.setAttribute('src', getPoster())
             cont_image.setAttribute('alt', 'movie poster');
+
 
             let cont_card_body = document.createElement('div');
             cont_card_body.classList.add('cont-card-body', 'card-body');
@@ -183,16 +200,23 @@ function fillContent(url) {
 
             let cont_movie_name = document.createElement('h5');
             cont_movie_name.classList.add('card-title');
-            cont_movie_name.innerHTML = 'movie name';
+            cont_movie_name.innerHTML = film.title;
 
             let cont_ul = document.createElement('ul');
             cont_ul.classList.add('list-group', 'list-group-flush', 'cont-list');
 
             let cont_year = document.createElement('li');
             cont_year.classList.add('list-group-item');
+            cont_year.innerHTML = film.release_date;
 
             let cont_rate = document.createElement('li');
             cont_rate.classList.add('list-group-item');
+            cont_rate.innerHTML = film.vote_average;
+            
+            let rate_star = document.createElement("img");
+            rate_star.setAttribute('src', 'picture/star.png');
+            rate_star.setAttribute('alt', 'movie star');
+            rate_star.style.width = '16px';
 
 
             movieCardGroup.appendChild(cont_card);
@@ -204,8 +228,8 @@ function fillContent(url) {
             cont_card_body.appendChild(cont_ul);
             cont_ul.appendChild(cont_year);
             cont_ul.appendChild(cont_rate);
+            cont_rate.appendChild(rate_star);
         })
     })
 
-};
-
+}
