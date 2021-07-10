@@ -17,7 +17,6 @@
 <body>
 
     <header>
-
         <nav class="navbar navbar-expand-md navbar-light ">
 
             <div class="container-fluid">
@@ -45,14 +44,27 @@
                         </li>
                     </ul>
 
-                    <div data-netlify-identity-menu></div>
+                    <a href="#" class="login">Login</a>
+                    <a href="#" class="register">Register</a>
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Chance Language
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><button class="dropdown-item" onclick="chanceLang('tr-TR', 'Türkçe')">Türkçe</button>
+                            </li>
+                            <li><button class="dropdown-item" onclick="chanceLang('en-EN','English')">English</button>
+                            </li>
+                            <li><button class="dropdown-item" onclick="chanceLang('gr-GR','Ελληνικά')">Ελληνικά</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
         </nav>
-
-
-
     </header>
 
     <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -77,18 +89,13 @@
 
     <main>
 
-        <div id="main-content" class="container">
-            <div id="cont_1" class="movie-cards-group"></div>
-        </div>
+        <div id="main-content" class="container"></div>
 
-
-        <div class="d-flex">
-
-            <button type="button" class="btn btn-info" onclick="nextContent()">Next</button>
+        <div class="d-flex mb-2">
             <button type="button" class="btn btn-info" onclick="previousContent()">Previous</button>
+            <button type="button" class="btn btn-info ms-auto" onclick="nextContent()">Next</button>
 
         </div>
-
     </main>
 
 
@@ -126,20 +133,15 @@
                             </div>
                             <div class="col-md-8">
 
-                                <h5 class="modal-title" id="movie_details_name">Movie Name</h5><br>
+                                <h5 class="modal-title" id="movie_details_name"></h5><br>
 
                                 <img id="movie_detail_star" src="/picture/star.png" alt="movie rate star">
-                                <span id="movie_details_rate">8.3</span>
+                                <span id="movie_details_rate"></span>
 
-                                <span id="movie_detail_year">29.04.1994</span><br><br>
-                                <span id="movie_detail_slogan">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit.</span>
+                                <span id="movie_detail_year"></span><br><br>
+                                <span id="movie_detail_slogan"></span>
                                 <hr>
-                                <p id="movie_detail_summary">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Praesentium nostrum maxime
-                                    perferendis. Maxime, sit illo. Dignissimos placeat optio corporis sunt
-                                    exercitationem
-                                    dolores consequuntur fugiat mollitia provident, aut rerum iste maiores!</p>
+                                <p id="movie_detail_summary"></p>
 
                             </div>
 
