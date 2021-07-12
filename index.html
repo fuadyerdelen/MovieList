@@ -33,19 +33,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Best 100</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">This mount</a>
-                        </li>
-                    </ul>
 
-                    <a href="#" class="login">Login</a>
-                    <a href="#" class="register">Register</a>
+                    </ul>
+                    <button id="mylist_btn" type="button" class="btn btn-info d-none" onclick="fillMovieList()" data-bs-toggle="modal"
+                        data-bs-target="#myAccountModal">
+                        my list
+                    </button>
+
+
+                    <button id="login_btn" type="button" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        Login
+                    </button>
+
+                    <button id="logout_btn" type="button" class="btn btn-info d-none" onclick="logout()">
+                        Logout
+                    </button>
+
+                    <button id="register_btn" type="button" class="btn btn-info" data-bs-toggle="modal"
+                        data-bs-target="#registerModal">
+                        Register
+                    </button>
+
                     <div class="dropdown">
                         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,8 +66,6 @@
                             </li>
                             <li><button class="dropdown-item" onclick="chanceLang('en-EN','English')">English</button>
                             </li>
-                            <li><button class="dropdown-item" onclick="chanceLang('gr-GR','Ελληνικά')">Ελληνικά</button>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -67,14 +74,10 @@
         </nav>
     </header>
 
-    <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-    </form> -->
 
-    <div id="slider">
+    <section id="slider">
         <ul id="movieList" class="list-group list-group-horizontal">
         </ul>
-
         <button onclick="crsLeft()" class="carousel-control-prev" type="button">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -83,8 +86,7 @@
             <span class="carousel-control-next-icon"></span>
         </button>
 
-    </div>
-
+    </section>
 
 
     <main>
@@ -96,9 +98,8 @@
             <button type="button" class="btn btn-info ms-auto" onclick="nextContent()">Next</button>
 
         </div>
+
     </main>
-
-
 
 
     <footer class="card-footer ">
@@ -117,7 +118,7 @@
     </footer>
 
 
-
+    <!-- movie details -->
     <div class="modal fade " id="movie_detail_modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered  modal-lg">
             <div class="modal-content">
@@ -150,8 +151,89 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" id="add_movie_btn" class="btn btn-info btn-lg">Add the
+                        list</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="loginInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginInputPassword1">
+                        </div>
+
+                        <button type="button" data-bs-dismiss="modal" onclick="login()"
+                            class="btn m-a btn-primary m-auto">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="registerInputName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="registerInputName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="registerInputEmail1"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerInputPassword1">
+                        </div>
+
+                        <button onclick="register()" class="btn m-a btn-primary">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- my account -->
+    <div class="modal fade" id="myAccountModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myAccountModalLabel">Hi <span id="user">User</span>! Make a list of what
+                        you want to watch..</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ol id="movie_list" class="list-group list-group-numbered">
+
+                    </ol>
+                </div>
+
             </div>
         </div>
     </div>
@@ -160,6 +242,8 @@
 
 
     <script src="app.js"></script>
+    <script src="login.js"></script>
+    <script src="movie.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
 </body>

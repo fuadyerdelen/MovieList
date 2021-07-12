@@ -32,7 +32,7 @@ function createCard(film) {
     let getPoster = 'https://image.tmdb.org/t/p/w185' + film.poster_path;
 
     let cont_card = document.createElement('div');
-    cont_card.classList.add('card', 'cont-card');
+    cont_card.classList.add('card', 'cont-card', 'border-info');
 
 
     let cont_image_a = document.createElement('a');
@@ -154,6 +154,21 @@ function showMovieDetails(link) {
             detailRate.innerHTML = data.vote_average;
             detailDate.innerHTML = data.release_date;
 
+            const btnAdd = document.getElementById('add_movie_btn');
+            if (!checkMovieAdded(data)) {
+                btnAdd.setAttribute("disabled", "true");
+            } else {
+                btnAdd.removeAttribute("disabled");
+                const addMovieFunc = () => {
+                    addMovie(data);
+                    btnAdd.setAttribute("disabled", "true");
+                    btnAdd.removeEventListener('click', addMovieFunc);
+                }
+                btnAdd.addEventListener('click', addMovieFunc);
+            }
+
+
+
 
             modal.show();
         });
@@ -161,19 +176,12 @@ function showMovieDetails(link) {
 
 
 // Chance languange 
-function chanceLang(a,b) {
-    document.getElementById('dropdownMenuLink').innerHTML =b;
+function chanceLang(a, b) {
+    document.getElementById('dropdownMenuLink').innerHTML = b;
     lang = a;
     fillPopularMovies();
     fillTopRatedMovies();
 }
-
-
-
-
-
-
-
 
 
 // Next manin Content
