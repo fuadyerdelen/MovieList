@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-md navbar-light ">
 
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a id="icon_btn" class="navbar-brand" href="">
                     <img src="picture/movie.png" alt="movie" id="icon">
                     The Movie List
                 </a>
@@ -35,10 +35,12 @@
 
 
                     </ul>
-                    <button id="mylist_btn" type="button" class="btn btn-info d-none" onclick="fillMovieList()" data-bs-toggle="modal"
+                    <a id="mylist_btn" href="" class="d-none" onclick="fillMovieList()"
+                        data-bs-toggle="modal"
                         data-bs-target="#myAccountModal">
-                        my list
-                    </button>
+                        <img src="/picture/user.png" alt="">
+                        My list
+                    </a>
 
 
                     <button id="login_btn" type="button" class="btn btn-info" data-bs-toggle="modal"

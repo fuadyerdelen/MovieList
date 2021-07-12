@@ -1,4 +1,4 @@
-// slider function//////
+// slider function
 
 let positionX = 0;
 let timer = setInterval(_crsRight, 3000);
@@ -61,7 +61,11 @@ function createCard(film) {
 
     let cont_year = document.createElement('li');
     cont_year.classList.add('list-group-item');
-    cont_year.innerHTML = film.release_date;
+    const convertDate = (date) => {
+        const dateArr = date.split('-');
+        return dateArr[2] + '/' + dateArr[1] + '/' + dateArr[0];
+    }
+    cont_year.innerHTML = convertDate(film.release_date);
 
     let cont_rate = document.createElement('li');
     cont_rate.classList.add('list-group-item');
@@ -88,7 +92,6 @@ function createCard(film) {
 
 
 // fill movie Slider
-
 function fillPopularMovies() {
 
     let movieList = document.getElementById('movieList');
@@ -147,12 +150,19 @@ function showMovieDetails(link) {
 
             let getPoster = 'https://image.tmdb.org/t/p/w185' + data.poster_path;
 
+            const convertDate = (date) => {
+                const dateArr = date.split('-');
+                return dateArr[2] + '/' + dateArr[1] + '/' + dateArr[0];
+            }
+
             detailPoster.setAttribute('src', getPoster);
             detailOverview.innerHTML = data.overview;
             detailName.innerHTML = data.title;
             detailSlogan.innerHTML = data.tagline;
             detailRate.innerHTML = data.vote_average;
-            detailDate.innerHTML = data.release_date;
+            detailDate.innerHTML = convertDate(data.release_date);
+
+             
 
             const btnAdd = document.getElementById('add_movie_btn');
             if (!checkMovieAdded(data)) {
@@ -200,3 +210,9 @@ function previousContent() {
     page--;
     fillTopRatedMovies();
 }
+
+
+
+document.getElementById('icon_btn').addEventListener('click', () => {
+    window.location.reload();
+})

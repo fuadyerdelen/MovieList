@@ -43,6 +43,8 @@ function login() {
         window.alert('Password ore email is not valid!')
     }
 
+    document.getElementById('user').innerText = user.username;
+
 };
 
 function logout() {

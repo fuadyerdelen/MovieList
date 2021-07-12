@@ -12,33 +12,25 @@ header {
 
 a {
     text-decoration: none;
+    color: black;
 }
-h5{
+
+h5 {
     font-size: 1.1em;
 }
+
 ul {
     list-style-type: none;
 }
 
 
-
-
-
-
-.netlify-identity-item {
-    display: inline-block;
-    width: auto;
-    margin: 10px 3px 2px 3px;
+#mylist_btn {
+    margin-right: 20px;
 }
 
-.login,
-.register {
-    text-align: center;
-    display: block;
-    color: black;
-    width: 100px;
+#mylist_btn img {
+    width: 40px;
 }
-
 
 
 
@@ -49,7 +41,8 @@ ul {
     padding-top: 30px;
     height: 500px;
 }
-#slider .cont-card:hover{
+
+#slider .cont-card:hover {
     transform: scale(1.03);
     transition-duration: .3s;
 }
@@ -89,9 +82,11 @@ ul {
     cursor: pointer;
     border-radius: 10% 0 10% 0;
 }
-.cont-card h5{
+
+.cont-card h5 {
     max-height: 1rem;
 }
+
 .card-body {
     padding: 8px;
 }
@@ -114,8 +109,6 @@ ul {
 
 
 /*   carousel buttons   */
-
-
 
 .carousel-control-next {
     position: absolute;
@@ -151,7 +144,6 @@ ul {
 
 
 /* footer */
-
 
 .card-footer {
     clear: both;
@@ -228,19 +220,18 @@ ul {
 
 
 
-#movie_list li{
+#movie_list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 2px;
 }
-#add_movie{
+
+#add_movie {
     margin: auto;
 }
 
-
-
-form{
+form {
     text-align: center;
     color: black;
 }
