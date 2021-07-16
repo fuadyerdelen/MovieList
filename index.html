@@ -36,7 +36,6 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
-
     </script>
 
 
@@ -70,17 +69,18 @@
                     </a>
 
 
-                    <button id="login_btn" type="button" class="btn btn-info" aria-label="login button" data-bs-toggle="modal"
-                        data-bs-target="#loginModal">
+                    <button id="login_btn" type="button" class="btn btn-info" aria-label="login button"
+                        data-bs-toggle="modal" data-bs-target="#loginModal">
                         Login
                     </button>
 
-                    <button id="logout_btn" type="button" class="btn btn-info d-none" aria-label="Logout button" onclick="logout()">
+                    <button id="logout_btn" type="button" class="btn btn-info d-none" aria-label="Logout button"
+                        onclick="logout()">
                         Logout
                     </button>
 
-                    <button id="register_btn" type="button" class="btn btn-info" aria-label="Register button" data-bs-toggle="modal"
-                        data-bs-target="#registerModal">
+                    <button id="register_btn" type="button" class="btn btn-info" aria-label="Register button"
+                        data-bs-toggle="modal" data-bs-target="#registerModal">
                         Register
                     </button>
 
@@ -91,11 +91,14 @@
                         </a>
 
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><button class="dropdown-item" aria-label="Tr Language" onclick="chanceLang('tr-TR', 'Türkçe')">Türkçe</button>
+                            <li><button class="dropdown-item" aria-label="Tr Language"
+                                    onclick="chanceLang('tr-TR', 'Türkçe')">Türkçe</button>
                             </li>
-                            <li><button class="dropdown-item" aria-label="En Language" onclick="chanceLang('en-EN','English')">English</button>
+                            <li><button class="dropdown-item" aria-label="En Language"
+                                    onclick="chanceLang('en-EN','English')">English</button>
                             </li>
-                            <li><button class="dropdown-item" aria-label="Gr Language" onclick="chanceLang('el-GR','Ελληνικά')">Ελληνικά</button>
+                            <li><button class="dropdown-item" aria-label="Gr Language"
+                                    onclick="chanceLang('el-GR','Ελληνικά')">Ελληνικά</button>
                             </li>
                         </ul>
                     </div>
@@ -109,11 +112,11 @@
     <section id="slider">
         <ul id="movieList" class="list-group list-group-horizontal">
         </ul>
-        <button onclick="crsLeft()" class="carousel-control-prev" aria-label="Prev button"  type="button">
+        <button onclick="crsLeft()" class="carousel-control-prev" aria-label="Prev button" type="button">
             <span class="carousel-control-prev-icon"></span>
         </button>
 
-        <button onclick="crsRight()" class="carousel-control-next" aria-label="Next button"  type="button">
+        <button onclick="crsRight()" class="carousel-control-next" aria-label="Next button" type="button">
             <span class="carousel-control-next-icon"></span>
         </button>
 
@@ -125,8 +128,10 @@
         <div id="main-content" class="container"></div>
 
         <div class="d-flex mb-2">
-            <button type="button" class="btn btn-info" aria-label="Prev page" onclick="previousContent()">Previous</button>
-            <button type="button" class="btn btn-info ms-auto" aria-label="Next page" onclick="nextContent()">Next</button>
+            <button type="button" class="btn btn-info" aria-label="Prev page"
+                onclick="previousContent()">Previous</button>
+            <button type="button" class="btn btn-info ms-auto" aria-label="Next page"
+                onclick="nextContent()">Next</button>
 
         </div>
 
@@ -182,9 +187,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="add_movie_btn" class="btn btn-info btn-lg" aria-label="Add list button">Add the
+                    <button type="button" id="add_movie_btn" class="btn btn-info btn-lg"
+                        aria-label="Add list button">Add the
                         list</button>
-                    <button type="button" class="btn btn-secondary" aria-label="close button" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" aria-label="close button"
+                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -242,7 +249,8 @@
                             <input type="password" class="form-control" id="registerInputPassword1">
                         </div>
 
-                        <button onclick="register()" class="btn m-a btn-primary" aria-label="submit button">Submit</button>
+                        <button onclick="register()" class="btn m-a btn-primary"
+                            aria-label="submit button">Submit</button>
                     </form>
                 </div>
 
@@ -269,10 +277,22 @@
         </div>
     </div>
 
-
     <script>
-        console.log(firebase);
+        // TODO: Replace the following with your app's Firebase project configuration
+        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+        const firebaseConfig = {
+        // ...
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
     </script>
+
+    <script src="/__/firebase/8.7.1/firebase-auth.js"></script>
+    <script src="/__/firebase/8.7.1/firebase-database.js"></script>
+    <script src="/__/firebase/8.7.1/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.7.1/firebase-analytics.js"></script>
 
     <script src="app.js"></script>
     <script src="login.js"></script>
