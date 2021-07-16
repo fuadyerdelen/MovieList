@@ -4,6 +4,7 @@
   "description": "You can make a list of movies you want to watch or have already watched.\r https://fuadthemovielist.netlify.app/",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
