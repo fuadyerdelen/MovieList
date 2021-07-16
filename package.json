@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/fuadyerdelen/MovieList#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "packagename": "^2.0.1"
   }
 }
