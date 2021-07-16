@@ -21,11 +21,11 @@ function _crsRight() {
     document.getElementById('movieList').style.transform = 'translateX(' + positionX + 'px)';
 }
 
-// card elemnt
-
+// card element
 let lang = 'en-En';
 
 function createCard(film) {
+
 
     let link = 'https://api.themoviedb.org/3/movie/' + film.id + '?api_key=218017c9311f39308d2dd5101ce25b23&language=' + lang;
 
@@ -185,7 +185,7 @@ function showMovieDetails(link) {
 }
 
 
-// Chance languange 
+// Chance language
 function chanceLang(a, b) {
     document.getElementById('dropdownMenuLink').innerHTML = b;
     lang = a;
@@ -216,3 +216,5 @@ function previousContent() {
 document.getElementById('icon_btn').addEventListener('click', () => {
     window.location.reload();
 })
+
+

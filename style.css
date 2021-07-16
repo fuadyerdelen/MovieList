@@ -67,8 +67,8 @@ ul {
 }
 
 
-/* card  */
 
+/* card  */
 
 .cont-card {
     border-radius: 10% 0 10% 0;
@@ -79,7 +79,7 @@ ul {
     box-shadow: 0 4px 6px 0 grey,
         0 6px 10px 0 grey;
     cursor: pointer;
-    border-radius: 10% 0 10% 0;
+
 }
 
 .cont-card h5 {
@@ -103,7 +103,6 @@ ul {
 #movieList {
     transition: transform .5s;
 }
-
 
 
 
@@ -197,7 +196,7 @@ ul {
 }
 
 
-/* mobile divices */
+/* mobile devices */
 
 @media (max-width: 768px) {
 
