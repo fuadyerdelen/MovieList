@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/fuadyerdelen/MovieList/issues"
   },
-  "homepage": "https://github.com/fuadyerdelen/MovieList#readme"
+  "homepage": "https://github.com/fuadyerdelen/MovieList#readme",
+  "dependencies": {
+    "packagename": "^2.0.1"
+  }
 }
