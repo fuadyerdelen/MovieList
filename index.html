@@ -9,36 +9,7 @@
     <title>movielist</title>
     <link rel="icon" type="image/png" href="/picture/movie.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyBgFsQLcPMzHkuyNNPzS4w9_YGPA6m4LXY",
-            authDomain: "movielist-ce9d3.firebaseapp.com",
-            projectId: "movielist-ce9d3",
-            storageBucket: "movielist-ce9d3.appspot.com",
-            messagingSenderId: "959072826981",
-            appId: "1:959072826981:web:49bfa42900845344f0388c",
-            measurementId: "G-BDGLYEW3RN"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -64,24 +35,27 @@
                     </ul>
                     <a id="mylist_btn" href="" class="d-none" onclick="fillMovieList()" data-bs-toggle="modal"
                         data-bs-target="#myAccountModal">
-                        <img src="/picture/user.png" alt="">
-                        My list
+                        <img src="/picture/user.png" alt=""> <span id="my_list"> My list </span>
+
                     </a>
 
 
                     <button id="login_btn" type="button" class="btn btn-info" aria-label="login button"
                         data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
+                        <span id="login"> Login</span>
+
                     </button>
 
                     <button id="logout_btn" type="button" class="btn btn-info d-none" aria-label="Logout button"
                         onclick="logout()">
-                        Logout
+                        <span id="logout" > Logout</span>
+
                     </button>
 
                     <button id="register_btn" type="button" class="btn btn-info" aria-label="Register button"
                         data-bs-toggle="modal" data-bs-target="#registerModal">
-                        Register
+                        <span id="register" > Register </span>
+
                     </button>
 
                     <div class="dropdown">
@@ -277,26 +251,13 @@
         </div>
     </div>
 
-    <script>
-        // TODO: Replace the following with your app's Firebase project configuration
-        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-        const firebaseConfig = {
-        // ...
-        };
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-    </script>
 
-    <script src="/__/firebase/8.7.1/firebase-auth.js"></script>
-    <script src="/__/firebase/8.7.1/firebase-database.js"></script>
-    <script src="/__/firebase/8.7.1/firebase-firestore.js"></script>
-    <script src="/__/firebase/8.7.1/firebase-analytics.js"></script>
 
-    <script src="app.js"></script>
-    <script src="login.js"></script>
-    <script src="movie.js"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/movie.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
 
